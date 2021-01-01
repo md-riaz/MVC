@@ -1,7 +1,7 @@
 <?php
 
 
-class HomeController {
+class DefaultController {
 
     /**
      * HomeController constructor.
@@ -13,6 +13,6 @@ class HomeController {
 
     public function index()
     {
-
+        echo "sdjflsdj";
     }
 }

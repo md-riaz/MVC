@@ -3,7 +3,7 @@
 // Core App Class
 class Core {
 
-    protected $currentController = 'HomeController';
+    protected $currentController = 'DefaultController';
     protected $currentMethod = 'index';
     protected $params = [];
 
@@ -14,9 +14,8 @@ class Core {
     {
         $url = $this->getUrl();
         $controllerName = $url[0];
-        $methodName = $url[1];
         //Look in 'controllers' for first value. ucwords will capitalize first letter
-        if (file_exists('../app/controllers/' . ucwords($controllerName) . '.php')) {
+        if (file_exists('../app/controllers/' . ucwords($controllerName) . 'Controller.php')) {
             // Will set a new controller
             $this->currentController = $controllerName;
             unset($controllerName);
@@ -27,7 +26,8 @@ class Core {
         $this->currentController = new $this->currentController;
 
         // Check for second part of the URL
-        if (isset($methodName)) {
+        if (isset($url[1])) {
+            $methodName = $url[1];
             if (method_exists($this->currentController, $methodName)) {
                 $this->currentMethod = $methodName;
                 unset($methodName);
