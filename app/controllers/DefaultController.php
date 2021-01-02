@@ -1,7 +1,7 @@
 <?php
 
 
-class DefaultController {
+class DefaultController extends Controller {
 
     /**
      * HomeController constructor.
