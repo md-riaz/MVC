@@ -3,7 +3,7 @@
 // Core App Class
 class Core {
 
-    protected $currentController = 'DefaultController';
+    protected $currentController = 'HomeController';
     protected $currentMethod = 'index';
     protected $params = [];
 
